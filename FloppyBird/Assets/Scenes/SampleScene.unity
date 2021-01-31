@@ -438,7 +438,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Hello Dan!
+  m_Text: Hello Adamaeus!
 --- !u!222 &1846679013
 CanvasRenderer:
   m_ObjectHideFlags: 0
