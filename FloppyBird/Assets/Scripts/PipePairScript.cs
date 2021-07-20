@@ -14,13 +14,19 @@ public class PipePairScript : MonoBehaviour
     public float heightMin; //-6.00
 
     public GameObject topPipe;
+    public GameObject botPipe;
 
     private Rigidbody2D rb;
     private float height;
 
+    public GameObject coinPrefab;
+    private GameObject currentCoin;
+
+
     void Start()
     {
         RandomizeHeight();
+        SetCoinHeight();
     }
 
     // Update is called once per frame
@@ -29,11 +35,22 @@ public class PipePairScript : MonoBehaviour
 
     }
 
+    void SetCoinHeight()
+    {
+        if (currentCoin != null)
+        {
+            Destroy(currentCoin);
+        }
+        currentCoin = Instantiate(coinPrefab, new Vector3(topPipe.transform.position.x, (topPipe.transform.position.y + botPipe.transform.position.y) / 2, topPipe.transform.position.z), Quaternion.identity) as GameObject; ;
+        currentCoin.transform.parent = gameObject.transform;
+    }
+
     public void ResetPipe()
     {
         IncreaseProximity();
         RandomizeHeight();
         iteration++;
+        SetCoinHeight();
     }
     
     private void IncreaseProximity()

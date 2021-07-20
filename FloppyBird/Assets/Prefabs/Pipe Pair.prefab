@@ -160,7 +160,10 @@ MonoBehaviour:
   iteration: 0
   heightMax: -2.25
   heightMin: -6
-  topPipe: {fileID: 0}
+  topPipe: {fileID: 7863840540912801223}
+  botPipe: {fileID: 4645711166746021221}
+  coinPrefab: {fileID: 7327857533962314787, guid: 4520f28187adc614586171d22c43cc35,
+    type: 3}
 --- !u!114 &-8838488862816309308
 MonoBehaviour:
   m_ObjectHideFlags: 0

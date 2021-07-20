@@ -573,6 +573,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5095550530668716794, guid: bde14d65a01fb4248bc9f1523c35e908,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5095550530668716796, guid: bde14d65a01fb4248bc9f1523c35e908,
         type: 3}
       propertyPath: m_Name
@@ -1026,6 +1031,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5095550530668716794, guid: bde14d65a01fb4248bc9f1523c35e908,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5095550530668716796, guid: bde14d65a01fb4248bc9f1523c35e908,
         type: 3}
       propertyPath: m_Name
@@ -1174,6 +1184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095550530668716794, guid: bde14d65a01fb4248bc9f1523c35e908,
+        type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5095550530668716796, guid: bde14d65a01fb4248bc9f1523c35e908,
         type: 3}
@@ -1384,6 +1399,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5095550530668716794, guid: bde14d65a01fb4248bc9f1523c35e908,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5095550530668716796, guid: bde14d65a01fb4248bc9f1523c35e908,
         type: 3}
       propertyPath: m_Name
@@ -1534,6 +1554,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5095550530668716794, guid: bde14d65a01fb4248bc9f1523c35e908,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5095550530668716796, guid: bde14d65a01fb4248bc9f1523c35e908,
         type: 3}
       propertyPath: m_Name
@@ -1560,8 +1585,9 @@ GameObject:
   - component: {fileID: 1728346702}
   - component: {fileID: 1728346703}
   - component: {fileID: 1728346704}
+  - component: {fileID: 1728346705}
   m_Layer: 0
-  m_Name: redbird-upflap
+  m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1680,6 +1706,25 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0021084845, y: 0.0021086638}
   m_Size: {x: 0.32313153, y: 0.24300593}
   m_Direction: 1
+--- !u!95 &1728346705
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728346699}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a2756f2eb2d2f0419faef5575b9443e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1846679010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +1936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095550530668716794, guid: bde14d65a01fb4248bc9f1523c35e908,
+        type: 3}
+      propertyPath: speed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5095550530668716796, guid: bde14d65a01fb4248bc9f1523c35e908,
         type: 3}

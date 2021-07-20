@@ -10,7 +10,6 @@ public class BirdScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.centerOfMass = new Vector2(-0.004216969f, 10.114217328f);
     }
 
     // Update is called once per frame
@@ -18,7 +17,6 @@ public class BirdScript : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            Debug.Log("Jumping!");
             rb.velocity = new Vector2(0f, 0f);
             rb.AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
         }
