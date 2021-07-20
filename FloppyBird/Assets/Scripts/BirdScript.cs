@@ -5,6 +5,7 @@ using UnityEngine;
 public class BirdScript : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public ScoreScript scoreScript;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,19 @@ public class BirdScript : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collidedEnvironment)
+    void OnTriggerEnter2D(Collider2D collidedObject)
     {
+        if (collidedObject.transform.tag == "Pipe" || collidedObject.transform.tag == "Floor")
+        {
+            Time.timeScale = 0;
+        }
+        else if (collidedObject.transform.tag == "Coin")
+        {
+            scoreScript.AddPoint();
+            Debug.Log("Hello!");
+            Destroy(collidedObject.gameObject);
+            // Play blink182 sound effect
+        }
         Debug.Log("GAME. OVER");
     }
 }

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5095550530668716797}
   - component: {fileID: 5095550530668716794}
   m_Layer: 0
-  m_Name: base
-  m_TagString: Untagged
+  m_Name: Floor
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  isPipe: 0

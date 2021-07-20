@@ -59,10 +59,12 @@ public class PipePairScript : MonoBehaviour
         if (iteration < bigDeltaIterations)
         {
             proxDelta = bigProxDelta;
+            Time.timeScale += .1f;
         } 
         else
         {
             proxDelta = smallProxDelta;
+            Time.timeScale += .01f;
         }
         topPipe.transform.position = new Vector3(topPipe.transform.position.x, topPipe.transform.position.y - proxDelta, topPipe.transform.position.z);
     }
