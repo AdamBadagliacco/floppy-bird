@@ -71,29 +71,20 @@ public class BirdScript : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D collidedObject)
+    public void KillBird()
     {
-        if (collidedObject.transform.tag == "Pipe" || collidedObject.transform.tag == "Floor")
-        {
-            //Time.timeScale = 0;
-            mode = Mode.Dead;
-            pipes.GetComponent<StopMoving>().MakeStopMoving();
-            floors.GetComponent<StopMoving>().MakeStopMoving();
-            GetComponent<CapsuleCollider2D>().isTrigger = false;
+        //Time.timeScale = 0;
+        mode = Mode.Dead;
+        pipes.GetComponent<StopMoving>().MakeStopMoving();
+        floors.GetComponent<StopMoving>().MakeStopMoving();
+        GetComponent<CapsuleCollider2D>().isTrigger = false;
+    }
 
-        }
-        else if (collidedObject.transform.tag == "Coin")
-        {
-            scoreScript.AddPoint();
-            Debug.Log("Hello!");
-            Destroy(collidedObject.gameObject);
-            // Play blink182 sound effect
-        }
-        else if (collidedObject.transform.tag == "Ceiling") {
-            rb.AddForce(new Vector2(0f, -5f), ForceMode2D.Impulse);
-        }
-
-        Debug.Log("GAME. OVER");
+    public void GetCoin()
+    {
+        scoreScript.AddPoint();
+        //Destroy(collidedObject.gameObject);
+        // TODO Play coin blink sound effect
     }
 
 }
