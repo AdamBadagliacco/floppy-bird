@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScrollLeftScript : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed;
+    public float speed;//2
     public bool isPipe;
     // Start is called before the first frame update
     void Start()
@@ -32,5 +32,11 @@ public class ScrollLeftScript : MonoBehaviour
                 gameObject.GetComponent<PipePairScript>().ResetPipe();
             }
         }
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        rb.velocity = new Vector2(newSpeed * -1, 0.0f);
+        speed = newSpeed;
     }
 }
