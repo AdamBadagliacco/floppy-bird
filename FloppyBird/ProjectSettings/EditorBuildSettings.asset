@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/FlappyBird.unity
+    path: Assets/FlappyAssets/Scenes/FlappyBird.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MarioWorld.unity
     guid: 38c2c69953ecc3a42ab158a7aee9c4eb
+  - enabled: 1
+    path: Assets/MarioAssets/Scenes/World 1-1.unity
+    guid: 8095ebcbfe4a14b30a787376f1d7fd22
+  - enabled: 1
+    path: Assets/MarioAssets/Scenes/Level Start Screen.unity
+    guid: 4f9707bcba2664592914f672043318ff
   m_configObjects: {}
