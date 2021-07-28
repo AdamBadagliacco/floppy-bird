@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BirdScript : MonoBehaviour
 {
+    public GameObject coinSound;
+    public GameObject deadSound;
+    public GameObject jumpSound;
 
     public enum Mode { Menu, Ready, Play, Dead };
     private Mode mode; 
@@ -63,6 +66,7 @@ public class BirdScript : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, 0f);
         rb.AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
+        jumpSound.GetComponent<AudioSource>().Play();
     }
 
     public void SetMode(Mode newValue)
@@ -78,13 +82,13 @@ public class BirdScript : MonoBehaviour
         pipes.GetComponent<StopMoving>().MakeStopMoving();
         floors.GetComponent<StopMoving>().MakeStopMoving();
         GetComponent<CapsuleCollider2D>().isTrigger = false;
+        deadSound.GetComponent<AudioSource>().Play();
     }
 
     public void GetCoin()
     {
         scoreScript.AddPoint();
-        //Destroy(collidedObject.gameObject);
-        // TODO Play coin blink sound effect
+        coinSound.GetComponent<AudioSource>().Play();
     }
 
 }
