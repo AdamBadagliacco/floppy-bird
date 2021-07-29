@@ -12,6 +12,8 @@ public class PipeWarpDown : MonoBehaviour {
 	public string sceneName;
 	public bool leadToSameLevel = true;
 
+    public GameObject gameManager;
+
 	// Use this for initialization
 	void Start () {
 		t_LevelManager = FindObjectOfType<LevelManager> ();
@@ -39,7 +41,20 @@ public class PipeWarpDown : MonoBehaviour {
 	bool marioEntered = false;
 	void OnTriggerStay2D(Collider2D other) {
 		if (other.tag == "Player" && mario.isCrouching && !marioEntered) {
-			mario.AutomaticCrouch ();
+
+            //Debug.Log("HERE 1: " + gameManager.GetComponent<GameStateManager>().GetCoins());
+            LevelManager t_LevelManager = FindObjectOfType<LevelManager>();
+            ScoreScript.SetScore(t_LevelManager.coins);
+
+            /*
+            Debug.Log("HERE 1: " + Difficulty.totalCoins);
+            Difficulty.totalCoins = gameManager.GetComponent<GameStateManager>().GetCoins();
+            Debug.Log("HERE 2: " + Difficulty.totalCoins);
+
+            ScoreScript.SetScore();
+            */
+
+            mario.AutomaticCrouch ();
 			isMoving = true;
 			marioEntered = true;
 			t_LevelManager.musicSource.Stop ();

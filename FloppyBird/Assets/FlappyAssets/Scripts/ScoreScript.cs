@@ -11,7 +11,7 @@ public class ScoreScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ResetScore();
+        UpdateScoreboard();
     }
 
     // Update is called once per frame
@@ -29,6 +29,11 @@ public class ScoreScript : MonoBehaviour
     public static int GetScore()
     {
         return score;
+    }
+
+    public static void SetScore(int newScore)
+    {
+        score = newScore;
     }
 
     public void ResetScore()

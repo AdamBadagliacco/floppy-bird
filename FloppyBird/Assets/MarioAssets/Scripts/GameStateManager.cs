@@ -23,6 +23,11 @@ public class GameStateManager : MonoBehaviour {
         coins = ScoreScript.GetScore();
     }
 
+    public int GetCoins()
+    {
+        return coins;
+    }
+
     void Awake () {
 		if (FindObjectsOfType (GetType ()).Length == 1) {
 			DontDestroyOnLoad (gameObject);
