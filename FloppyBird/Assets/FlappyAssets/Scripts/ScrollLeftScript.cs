@@ -6,7 +6,7 @@ public class ScrollLeftScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed;//2
-    public bool isPipe;
+    public bool isPipePair;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,7 @@ public class ScrollLeftScript : MonoBehaviour
         {
             Debug.Log("Resetting");
             gameObject.transform.position = new Vector3(21.12f, gameObject.transform.position.y, gameObject.transform.position.z);
-            if (isPipe)
+            if (isPipePair)
             {
                 gameObject.GetComponent<PipePairScript>().ResetPipe();
             }

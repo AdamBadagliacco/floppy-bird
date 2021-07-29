@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - Ceiling
   - Bird
+  - GreenPipe
   layers:
   - Default
   - TransparentFX

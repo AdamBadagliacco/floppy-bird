@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdScript : MonoBehaviour
 {
@@ -33,7 +34,10 @@ public class BirdScript : MonoBehaviour
         if (mode == Mode.Play) {
             if (Input.GetKeyDown("space"))
             {
-                Jump();
+                if (gameObject.transform.position.y < 5.25)
+                {
+                    Jump();
+                }
             }
         }
         else if (mode == Mode.Menu) {
@@ -89,6 +93,23 @@ public class BirdScript : MonoBehaviour
     {
         scoreScript.AddPoint();
         coinSound.GetComponent<AudioSource>().Play();
+    }
+
+    void OnTriggerEnter2D(Collider2D collidedObject)
+    {
+        if (collidedObject.transform.tag == "Pipe" || collidedObject.transform.tag == "Floor")
+        {
+            KillBird();
+        }
+        else if (collidedObject.transform.tag == "Coin")
+        {
+            GetCoin();
+            Destroy(collidedObject.gameObject);
+        }
+        else if (collidedObject.transform.tag == "GreenPipe")
+        {
+            SceneManager.LoadScene("World 1-1");
+        }
     }
 
 }
