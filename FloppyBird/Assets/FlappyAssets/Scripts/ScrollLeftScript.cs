@@ -25,7 +25,6 @@ public class ScrollLeftScript : MonoBehaviour
     {
         if (gameObject.transform.position.x <= -12.42)
         {
-            Debug.Log("Resetting");
             gameObject.transform.position = new Vector3(21.12f, gameObject.transform.position.y, gameObject.transform.position.z);
             if (isPipePair)
             {
