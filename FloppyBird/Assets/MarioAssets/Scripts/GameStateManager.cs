@@ -21,6 +21,7 @@ public class GameStateManager : MonoBehaviour {
     void Start()
     {
         coins = ScoreScript.GetScore();
+		lives = 0;
     }
 
     public int GetCoins()
@@ -50,7 +51,7 @@ public class GameStateManager : MonoBehaviour {
 
 	public void ConfigNewGame() {
 		marioSize = 0;
-		lives = 3;
+		lives = 0;
 		coins = 0;
 		scores = 0;
 		timeLeft = 400.5f;
