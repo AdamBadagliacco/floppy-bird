@@ -18,7 +18,12 @@ public class GameStateManager : MonoBehaviour {
 	public string sceneToLoad; // what scene to load after level start screen finishes?
 	public bool timeup;
 
-	void Awake () {
+    void Start()
+    {
+        coins = ScoreScript.GetScore();
+    }
+
+    void Awake () {
 		if (FindObjectsOfType (GetType ()).Length == 1) {
 			DontDestroyOnLoad (gameObject);
 			ConfigNewGame ();

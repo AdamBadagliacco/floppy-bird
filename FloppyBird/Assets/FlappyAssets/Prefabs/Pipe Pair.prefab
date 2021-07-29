@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  isPipePair: 0
+  isPipePair: 1
 --- !u!1 &7863840540912801223
 GameObject:
   m_ObjectHideFlags: 0

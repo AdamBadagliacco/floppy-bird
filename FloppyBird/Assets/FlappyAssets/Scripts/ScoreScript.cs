@@ -17,7 +17,7 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void AddPoint()
@@ -26,7 +26,7 @@ public class ScoreScript : MonoBehaviour
         UpdateScoreboard();
     }
 
-    public int GetScore()
+    public static int GetScore()
     {
         return score;
     }
