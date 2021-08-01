@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonActions : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class ButtonActions : MonoBehaviour
         buttons.SetActive(false);
         pressSpaceText.SetActive(true);
         bird.GetComponent<BirdScript>().SetMode(BirdScript.Mode.Ready);
-
     }
     public void Characters()
     {
@@ -33,5 +33,16 @@ public class ButtonActions : MonoBehaviour
     public void LogIn()
     {
         Debug.Log("Button Pressed");
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("FlappyBird");
+        ScoreScript.SetScore(0);
+    }
+
+    public void UploadScore()
+    {
+        Debug.Log("UPLOADING SCORE");
     }
 }

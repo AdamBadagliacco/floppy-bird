@@ -87,6 +87,14 @@ public class BirdScript : MonoBehaviour
         floors.GetComponent<StopMoving>().MakeStopMoving();
         GetComponent<CapsuleCollider2D>().isTrigger = false;
         deadSound.GetComponent<AudioSource>().Play();
+        StartCoroutine(deathWaiter());
+    }
+
+    IEnumerator deathWaiter()
+    {
+        //Wait for 2 seconds
+        yield return new WaitForSecondsRealtime(1);
+        SceneManager.LoadScene("Game Over Screen");
     }
 
     public void GetCoin()
