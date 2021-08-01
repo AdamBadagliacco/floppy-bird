@@ -306,6 +306,7 @@ public class Mario : MonoBehaviour {
 //	Vector2 deadUpVelocity = new Vector2 (0, 10f);
 //	Vector2 deadDownVelocity = new Vector2 (0, -15f);
 	public void FreezeAndDie() {
+		ScoreScript.SetScore(t_LevelManager.coins);
 		FreezeUserInput ();
 		isDying = true;
 		m_Rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
