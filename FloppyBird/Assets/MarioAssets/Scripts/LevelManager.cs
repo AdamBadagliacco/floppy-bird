@@ -557,17 +557,7 @@ public class LevelManager : MonoBehaviour {
 
 	/****************** Misc */
 	public Vector3 FindSpawnPosition() {
-		Vector3 spawnPosition;
-		GameStateManager t_GameStateManager = FindObjectOfType<GameStateManager>();
-		Debug.Log (this.name + " FindSpawnPosition: GSM spawnFromPoint=" + t_GameStateManager.spawnFromPoint.ToString()
-			+ " spawnPipeIdx= " + t_GameStateManager.spawnPipeIdx.ToString() 
-			+ " spawnPointIdx=" + t_GameStateManager.spawnPointIdx.ToString());
-		if (t_GameStateManager.spawnFromPoint) {
-			spawnPosition = GameObject.Find ("Spawn Points").transform.GetChild (t_GameStateManager.spawnPointIdx).transform.position;
-		} else {
-			spawnPosition = GameObject.Find ("Spawn Pipes").transform.GetChild (t_GameStateManager.spawnPipeIdx).transform.Find("Spawn Pos").transform.position;
-		}
-		return spawnPosition;
+		return new Vector3(0, 6, 0);
 	}
 
 	public string GetWorldName(string sceneName) {
