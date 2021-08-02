@@ -23,3 +23,5 @@ Enter: Pause
 I do not own any of the visual or auditory assets used on this project. 
 Samples of code and assets used from [here](https://github.com/samuelcust/flappy-bird-assets) and  [here](https://github.com/linhdvu14/SMB-clone).
 
+![GamePlayScreenShot](https://raw.githubusercontent.com/AdamBadagliacco/floppy-bird/main/Bird.PNG)
+
