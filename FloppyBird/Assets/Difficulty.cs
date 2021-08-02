@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Difficulty : MonoBehaviour
 {
-    public static int totalCoins;
 
     //Flappy Bird
-    public static float timeScale;
+    public static float timeScale = 1f;
+
+    //Mario
+    public static int droneAmount;
 
 
     // Start is called before the first frame update

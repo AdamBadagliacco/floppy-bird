@@ -27,6 +27,14 @@ public class BirdScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         mode = Mode.Ready;
+
+        Debug.Log("current Timescale:" + Difficulty.timeScale);
+
+        if (Difficulty.timeScale < 1f) { //Game already started dont need this shown
+            leaderboard.SetActive(false);
+        }
+
+        Time.timeScale = Difficulty.timeScale;
     }
 
 
@@ -120,6 +128,7 @@ public class BirdScript : MonoBehaviour
         }
         else if (collidedObject.transform.tag == "GreenPipe")
         {
+            Difficulty.timeScale = Time.timeScale - 0.2f;
             SceneManager.LoadScene("World 1-1");
         }
     }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DroneScript : MonoBehaviour
 {
-    private float leftSide = 0f;
-    private float rightSide = 199f;
-    private bool goingRight = true;
+    public float leftSide = 0f;
+    public float rightSide = 199f;
+    public bool goingRight = true;
     private Rigidbody2D rb;
 
     //Below attributes are the ones to edit for a different feel/difficulty
@@ -50,7 +50,7 @@ public class DroneScript : MonoBehaviour
 
             //Resets drone to normal speed and cooldown, and creates another as well 
             if (TotalCoolDownTime < 1f && DronePrefab.transform.childCount < 10) {
-                GameObject newDrone = Instantiate(DronePrefab, new Vector3(0, 0, 0), Quaternion.identity);
+                GameObject newDrone = Instantiate(DronePrefab, new Vector3(0, 9.45f, 0), Quaternion.identity);
                 newDrone.transform.parent = DroneParent.transform;
                 ResetDrone();
             }
