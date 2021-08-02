@@ -24,11 +24,17 @@ public class APIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DoRequest("https://2t6es54bpd.execute-api.us-west-2.amazonaws.com/public"));
+        StartCoroutine(GetLeaderboard());
     }
 
-    IEnumerator DoRequest(string uri)
+    public static void UploadScore(string initials, int score, MonoBehaviour behavior)
     {
+        behavior.StartCoroutine(PostScore(initials, score));
+    }
+
+    IEnumerator GetLeaderboard()
+    {
+        string uri = "https://2t6es54bpd.execute-api.us-west-2.amazonaws.com/public";
         UnityWebRequest uwr = UnityWebRequest.Get(uri);
         yield return uwr.SendWebRequest();
 
@@ -42,7 +48,7 @@ public class APIHandler : MonoBehaviour
             Debug.Log("Received: " + json_response);
 
             string jsonBody = GetRequestBody(json_response).Replace("\\", "");
-
+            Debug.Log("JSONBODY: " + jsonBody);
             LeaderboardData myObject = JsonUtility.FromJson<LeaderboardData>(jsonBody);
             
             Debug.Log("Entries: " + myObject);
@@ -52,6 +58,27 @@ public class APIHandler : MonoBehaviour
             }
 
             Display.text = myObject.entries[1].name;
+        }
+    }
+
+    static IEnumerator PostScore(string initials, int score)
+    {
+        string uri = "https://2t6es54bpd.execute-api.us-west-2.amazonaws.com/public";
+        WWWForm form = new WWWForm();
+        form.AddField("name", initials);
+        form.AddField("score", score);
+
+        UnityWebRequest uwr = UnityWebRequest.Post(uri, form);
+        yield return uwr.SendWebRequest();
+
+        if (uwr.isNetworkError)
+        {
+            Debug.Log("Error While Sending: " + uwr.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete!");
+            Debug.Log("Result: " + uwr.downloadHandler.text);
         }
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonActions : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class ButtonActions : MonoBehaviour
     public GameObject buttons;
     public GameObject bird;
     public GameObject pressSpaceText;
+    public GameObject submitScoreButton;
+    public GameObject nameInputText;
+
+    public string initials;
 
     public void Play()
     {
@@ -43,6 +48,21 @@ public class ButtonActions : MonoBehaviour
 
     public void UploadScore()
     {
-        Debug.Log("UPLOADING SCORE");
+        string name = nameInputText.GetComponent<Text>().text;
+        int score = ScoreScript.GetScore();
+        APIHandler.UploadScore(name, score, this);
+    }
+
+    public void InitialsChanged(string newInitials)
+    {
+        Debug.Log(newInitials.Length);
+        if (newInitials.Length > 0)
+        {
+            submitScoreButton.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            submitScoreButton.GetComponent<Button>().interactable = false;
+        }
     }
 }
