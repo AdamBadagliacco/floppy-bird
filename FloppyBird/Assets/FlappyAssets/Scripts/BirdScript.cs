@@ -19,12 +19,14 @@ public class BirdScript : MonoBehaviour
     public GameObject pipes;
     public GameObject floors;
 
+    public GameObject leaderboard;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        mode = Mode.Menu;
+        mode = Mode.Ready;
     }
 
 
@@ -52,6 +54,8 @@ public class BirdScript : MonoBehaviour
                 Jump();
                 mode = Mode.Play;
                 pressSpaceText.SetActive(false);
+                pipes.SetActive(true); 
+                leaderboard.SetActive(false);
             }
         }
 
