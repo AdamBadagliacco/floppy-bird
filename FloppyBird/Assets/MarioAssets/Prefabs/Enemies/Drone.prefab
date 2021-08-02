@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 979555074756324245}
   - component: {fileID: 979555074756324244}
   - component: {fileID: 979555074756324247}
+  - component: {fileID: 8443660213291253842}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -94,6 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fea8ed7559071f429787f693975845a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftSide: 0
+  rightSide: 199
+  goingRight: 1
   timeRemaining: 5
   TotalCoolDownTime: 5
   speed: 5
@@ -111,3 +115,24 @@ MonoBehaviour:
   MaxDroneAmount: 10
   DroneParent: {fileID: 0}
   DronePrefab: {fileID: 979555074756324243}
+--- !u!50 &8443660213291253842
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979555074756324243}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

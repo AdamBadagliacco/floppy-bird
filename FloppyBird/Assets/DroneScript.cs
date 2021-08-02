@@ -22,7 +22,7 @@ public class DroneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.AddComponent<Rigidbody2D>() as Rigidbody2D;
+        rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
