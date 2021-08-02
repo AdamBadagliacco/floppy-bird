@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class ButtonActions : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class ButtonActions : MonoBehaviour
     public GameObject bird;
     public GameObject pressSpaceText;
     public GameObject submitScoreButton;
+    public GameObject textInputField;
     public GameObject nameInputText;
+    public GameObject scoreUploadedText;
 
     public string initials;
 
@@ -50,7 +53,12 @@ public class ButtonActions : MonoBehaviour
     {
         string name = nameInputText.GetComponent<Text>().text;
         int score = ScoreScript.GetScore();
-        APIHandler.UploadScore(name, score, this);
+        UploadScore(name, score);
+
+        submitScoreButton.SetActive(false);
+        textInputField.SetActive(false);
+
+        scoreUploadedText.SetActive(true) ;
     }
 
     public void InitialsChanged(string newInitials)
@@ -63,6 +71,33 @@ public class ButtonActions : MonoBehaviour
         else
         {
             submitScoreButton.GetComponent<Button>().interactable = false;
+        }
+    }
+
+    public void UploadScore(string initials, int score)
+    {
+        StartCoroutine(PostScore(initials, score));
+    }
+
+
+    IEnumerator PostScore(string initials, int score)
+    {
+        string uri = "https://2t6es54bpd.execute-api.us-west-2.amazonaws.com/public";
+        WWWForm form = new WWWForm();
+        form.AddField("name", initials);
+        form.AddField("score", score);
+
+        UnityWebRequest uwr = UnityWebRequest.Post(uri, form);
+        yield return uwr.SendWebRequest();
+
+        if (uwr.isNetworkError)
+        {
+            Debug.Log("Error While Sending: " + uwr.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete!");
+            Debug.Log("Result: " + uwr.downloadHandler.text);
         }
     }
 }
