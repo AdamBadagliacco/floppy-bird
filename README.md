@@ -1,5 +1,5 @@
 # The Final Flap
-
+**[PLAY THE GAME](https://adambadagliacco.itch.io/the-final-flap)**
 **Goal:** Collect as many coins as you can! The leaderboard displays all the top players. Do you have what it takes to be #1?
 
 ---**Controls**---
