@@ -48,12 +48,7 @@ public class DroneScript : MonoBehaviour
             TotalCoolDownTime -= 0.5f;
             speed = speed + 0.5f;
             Instantiate(spawnableEnemies[Random.Range(0, spawnableEnemies.Length)], gameObject.transform.position, Quaternion.identity);
-
-            //Resets drone to normal speed and cooldown, and creates another as well 
-            if (TotalCoolDownTime < 1f && DroneParent.transform.childCount < 10) {
-               
-                ResetDrone();
-            }
+            ResetDrone();
         }
     }
 
