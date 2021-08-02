@@ -51,8 +51,7 @@ public class DroneScript : MonoBehaviour
 
             //Resets drone to normal speed and cooldown, and creates another as well 
             if (TotalCoolDownTime < 1f && DroneParent.transform.childCount < 10) {
-                GameObject newDrone = Instantiate(DronePrefab, new Vector3(0, 9.45f, 0), Quaternion.identity);
-                newDrone.transform.parent = DroneParent.transform;
+               
                 ResetDrone();
             }
         }

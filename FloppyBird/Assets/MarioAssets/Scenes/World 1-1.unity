@@ -1340,6 +1340,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1213198798568588, guid: 2edb2b8e476654f0ea2807c7a8261a76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708606342268268, guid: 2edb2b8e476654f0ea2807c7a8261a76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4032349340779134, guid: 2edb2b8e476654f0ea2807c7a8261a76, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5
@@ -8078,6 +8086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1696563177}
+  - component: {fileID: 1696563178}
   m_Layer: 0
   m_Name: ParentDrone
   m_TagString: Untagged
@@ -8100,6 +8109,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1696563178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696563176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 475a75081d2f22c45aca86323939baa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 7
+  TotalCoolDownTime: 7
+  DronePrefab: {fileID: 979555074756324243, guid: 0c2c67cf4c61a614882885ca0ca9f725,
+    type: 3}
 --- !u!1001 &1719523830
 PrefabInstance:
   m_ObjectHideFlags: 0
