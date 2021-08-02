@@ -24,6 +24,7 @@ public class DroneScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
+        ResetDrone();
     }
 
     // Update is called once per frame
@@ -49,7 +50,7 @@ public class DroneScript : MonoBehaviour
             Instantiate(spawnableEnemies[Random.Range(0, spawnableEnemies.Length)], gameObject.transform.position, Quaternion.identity);
 
             //Resets drone to normal speed and cooldown, and creates another as well 
-            if (TotalCoolDownTime < 1f && DronePrefab.transform.childCount < 10) {
+            if (TotalCoolDownTime < 1f && DroneParent.transform.childCount < 10) {
                 GameObject newDrone = Instantiate(DronePrefab, new Vector3(0, 9.45f, 0), Quaternion.identity);
                 newDrone.transform.parent = DroneParent.transform;
                 ResetDrone();
