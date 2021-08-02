@@ -18,7 +18,7 @@ public class ParentDroneScript : MonoBehaviour
 
         for (int i = 0; i < Difficulty.droneAmount; i++)
         {
-            GameObject newDrone = Instantiate(DronePrefab, new Vector3(i * 100, (-.25f * i) + 9.45f, 0), Quaternion.identity);
+            GameObject newDrone = Instantiate(DronePrefab, new Vector3(-10 * (i+1), (-.25f * i) + 9.45f, 0), Quaternion.identity);
             newDrone.transform.parent = gameObject.transform;
         }
 
@@ -36,7 +36,7 @@ public class ParentDroneScript : MonoBehaviour
         {
             Difficulty.droneAmount += 1;
             int i = Difficulty.droneAmount;
-            GameObject newDrone = Instantiate(DronePrefab, new Vector3(i * 100, (-.25f * i) + 9.45f, 0), Quaternion.identity);
+            GameObject newDrone = Instantiate(DronePrefab, new Vector3(-10, (-.25f * i) + 9.45f, 0), Quaternion.identity);
             newDrone.transform.parent = gameObject.transform;
             timeRemaining = TotalCoolDownTime;
         }

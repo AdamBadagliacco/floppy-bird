@@ -30,7 +30,7 @@ public class BirdScript : MonoBehaviour
 
         Debug.Log("current Timescale:" + Difficulty.timeScale);
 
-        if (Difficulty.timeScale < 1f) { //Game already started dont need this shown
+        if (Difficulty.timeScale > 1f) { //Game already started dont need this shown
             leaderboard.SetActive(false);
         }
 
@@ -128,8 +128,9 @@ public class BirdScript : MonoBehaviour
         }
         else if (collidedObject.transform.tag == "GreenPipe")
         {
-            Difficulty.timeScale = Time.timeScale - 0.2f;
-            SceneManager.LoadScene("World 1-1");
+            Debug.Log("Leaving Timescale: " + Time.timeScale);
+            Difficulty.timeScale = Time.timeScale - 0.1f;
+           SceneManager.LoadScene("World 1-1");
         }
     }
 

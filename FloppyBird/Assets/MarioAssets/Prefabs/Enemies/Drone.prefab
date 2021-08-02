@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftSide: 0
-  rightSide: 199
+  rightSide: 180
   goingRight: 1
   timeRemaining: 5
   TotalCoolDownTime: 5

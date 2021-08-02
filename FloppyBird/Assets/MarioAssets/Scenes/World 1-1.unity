@@ -5568,6 +5568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn Point (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1467949357613002, guid: a209d8fe0d6e94baf95b9461f7ea33a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4268584425021410, guid: a209d8fe0d6e94baf95b9461f7ea33a1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7890,7 +7894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1676089209
 Transform:
   m_ObjectHideFlags: 0
@@ -10007,7 +10011,7 @@ PrefabInstance:
     - target: {fileID: 979555074756324245, guid: 0c2c67cf4c61a614882885ca0ca9f725,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 979555074756324245, guid: 0c2c67cf4c61a614882885ca0ca9f725,
         type: 3}

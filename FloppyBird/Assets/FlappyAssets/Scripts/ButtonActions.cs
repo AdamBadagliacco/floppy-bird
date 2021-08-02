@@ -48,6 +48,7 @@ public class ButtonActions : MonoBehaviour
         SceneManager.LoadScene("FlappyBird");
         ScoreScript.SetScore(0);
         Difficulty.timeScale = 1f;
+        Difficulty.droneAmount = 0;
     }
 
     public void UploadScore()

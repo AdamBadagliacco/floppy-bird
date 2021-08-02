@@ -139,10 +139,6 @@ public class LevelManager : MonoBehaviour {
 			}
 		}
 
-		if (timeLeftInt <= 0) {
-			MarioRespawn (true);
-		}
-
 		if (Input.GetButtonDown ("Pause")) {
 			if (!gamePaused) {
 				StartCoroutine (PauseGameCo ());

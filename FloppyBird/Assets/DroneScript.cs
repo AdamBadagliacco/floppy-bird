@@ -55,11 +55,13 @@ public class DroneScript : MonoBehaviour
     private void moveRight() {
         rb.velocity = new Vector2(speed, 0.0f);
         goingRight = true;
+        GetComponent<SpriteRenderer>().flipX = false;
     }
 
     private void moveLeft() {
         rb.velocity = new Vector2(-speed, 0.0f);
         goingRight = false;
+        GetComponent<SpriteRenderer>().flipX = true;
     }
 
     private void ResetDrone()
