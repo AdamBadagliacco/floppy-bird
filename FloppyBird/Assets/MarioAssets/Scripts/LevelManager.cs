@@ -98,8 +98,9 @@ public class LevelManager : MonoBehaviour {
 		soundSource.volume = PlayerPrefs.GetFloat("soundVolume");
 		pauseSoundSource.volume = PlayerPrefs.GetFloat("soundVolume");
 
-		// HUD
-		SetHudCoin ();
+        // HUD
+        coins = ScoreScript.GetScore();
+        SetHudCoin (); //Adam commented out this one line to fix the issue with mario losing his coins when the level resets
 		SetHudScore ();
 		SetHudTime ();
 		if (hurryUp) {
@@ -446,8 +447,9 @@ public class LevelManager : MonoBehaviour {
 
 	/****************** HUD and sound effects */
 	public void SetHudCoin() {
-		coinText.text = "x" + coins.ToString ("D2");
-	}
+        coinText.text = "x" + coins.ToString ("D2");
+
+    }
 
 	public void SetHudScore() {
 		scoreText.text = scores.ToString ("D6");
