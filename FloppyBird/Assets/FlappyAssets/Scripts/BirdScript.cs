@@ -42,7 +42,7 @@ public class BirdScript : MonoBehaviour
     void Update()
     {
         if (mode == Mode.Play) {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space") || Input.touches.Length > 0)
             {
                 if (gameObject.transform.position.y < 5.25)
                 {
@@ -57,7 +57,7 @@ public class BirdScript : MonoBehaviour
         {
             AutoJump();
 
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("space") || Input.touches.Length > 0)
             {
                 Jump();
                 mode = Mode.Play;
